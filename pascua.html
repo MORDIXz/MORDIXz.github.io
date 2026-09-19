@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HUEVO DE PASCUA</title>
+    <link rel="stylesheet" href="PaginasAlternas/paginas_alternas.css">
+    <style>
+        /* Contenedor general de la sección */
+        .huevo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* El Huevo Rojo realista */
+        .huevo-rojo {
+            width: 180px;
+            height: 230px;
+            background: radial-gradient(circle at 30% 30%, #ff6b6b, #c92a2a);
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            box-shadow: inset -10px -15px 25px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            transition: transform 0.1s ease, background 0.3s ease;
+            position: relative;
+        }
+
+        .huevo-rojo:active {
+            transform: scale(0.95);
+        }
+
+        #texto-clicks {
+            color: white;
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        }
+
+        /* Estados de grietas del huevo */
+        .huevo-rojo.estado-1 {
+            background: radial-gradient(circle at 30% 30%, #ff6b6b, #c92a2a), 
+                        linear-gradient(45deg, transparent 48%, rgba(255,255,255,0.4) 50%, transparent 52%);
+        }
+
+        .huevo-rojo.estado-2 {
+            box-shadow: inset -10px -15px 25px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(0,0,0,0.2), 
+                        0 0 0 3px rgba(255,255,255,0.6);
+        }
+
+        .huevo-rojo.estado-3 {
+            animation: temblor 0.2s infinite;
+        }
+
+        .huevo-rojo.estado-4 {
+            animation: temblor-fuerte 0.1s infinite;
+            filter: brightness(1.1);
+        }
+
+        @keyframes temblor {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(-3deg); }
+            75% { transform: rotate(3deg); }
+            100% { transform: rotate(0deg); }
+        }
+
+        @keyframes temblor-fuerte {
+            0% { transform: translate(2px, 2px) rotate(0deg); }
+            25% { transform: translate(-2px, -2px) rotate(-5deg); }
+            50% { transform: translate(2px, -2px) rotate(5deg); }
+            75% { transform: translate(-2px, 2px) rotate(-5deg); }
+            100% { transform: translate(2px, -2px) rotate(0deg); }
+        }
+
+        .oculto {
+            display: none !important;
+        }
+
+        /* Modal de Términos y Condiciones */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-contenido {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border: 3px solid #c92a2a;
+            animation: aparecerTarjeta 0.4s ease forwards;
+        }
+
+        .modal-contenido h2 {
+            color: #c92a2a;
+            margin-bottom: 1rem;
+        }
+
+        .modal-contenido p {
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-botones {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-aceptar, .btn-rechazar {
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .btn-aceptar {
+            background-color: #25d366;
+            color: white;
+        }
+
+        .btn-aceptar:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+        }
+
+        .btn-rechazar {
+            background-color: #e03131;
+            color: white;
+        }
+
+        .btn-rechazar:hover {
+            background-color: #c92a2a;
+            transform: translateY(-2px);
+        }
+
+        /* Contenedor sección centralizado para la tarjeta */
+        .huevo.contenido_main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 50vh;
+        }
+
+        /* Tarjeta del premio centrada y llamativa */
+        .tarjeta-premio {
+            background: white;
+            border-radius: 25px;
+            padding: 2.5rem;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+            text-align: center;
+            border: 4px dashed #c92a2a;
+            animation: aparecerTarjeta 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            margin: auto; /* Centrado automático absoluto */
+        }
+
+        @keyframes aparecerTarjeta {
+            0% { transform: scale(0.3); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .logo-marca {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: #c92a2a;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .logo-premio-img {
+            max-width: 140px; /* Mabalinmo a sukatan no kasapulan a dakdakkel wenno bassit */
+            height: auto;
+            display: block;
+        }
+
+        .tarjeta-premio h2 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .premio-resaltado {
+            color: #e03131;
+            font-size: 1.8rem;
+            margin: 0.8rem 0;
+            font-weight: 800;
+            text-align: center;
+            width: 100%;
+        }
+
+        .instruccion-wsp {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25d366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: translateY(-2px);
+        }
+        .txt-premio{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+    </style>
+</head>
+<body>
+
+    <!-- MODAL DE TÉRMINOS Y CONDICIONES -->
+    <div id="modal-terminos" class="modal-overlay">
+        <div class="modal-contenido">
+            <h2>TÉRMINOS Y CONDICIONES</h2>
+            <p>Este es un <strong>premio único e irrepetible</strong>. Únicamente la primera persona en descubrir y reclamar este huevo secreto podrá quedarse con el beneficio. Una vez reclamado, este evento concluirá hasta el lanzamiento de un nuevo huevo oculto dentro de la plataforma. ¡Por favor, estén muy atentos a futuras sorpresas de MORDIX!</p>
+            <div class="modal-botones">
+                <button id="btn-no" class="btn-rechazar">No acepto</button>
+                <button id="btn-si" class="btn-aceptar">Acepto</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="caja">
+        <header>
+            <div class="logo-container">
+                <a href="../../index.html"><img class="logo-img" src="../../IMG/ICONOS/MORDIX.svg" alt="MORDIX"></a>
+            </div>
+            <nav class="nav-menu"></nav>
+        </header>
+
+        <main>
+            <h1>¡FELICIDADES! ESTÁS BUSCANDO UN PREMIO</h1>
+            <h2>Reglas: Eres el unico usuario que puede ganar solo tu y tu fuiste el primero y nadie mas puede ganar</h2>
+            <section class="huevo contenido_main secciones">
+                
+                <!-- Contenedor del huevo interactivo -->
+                <div id="contenedor-huevo" class="huevo-wrapper">
+                    <div id="huevo-rojo" class="huevo-rojo estado-0">
+                        <span id="texto-clicks">¡Presióname 5 veces! (0/5)</span>
+                    </div>
+                </div>
+
+                <!-- Tarjeta de premio (inicialmente oculta) -->
+                <div id="tarjeta-premio" class="tarjeta-premio oculto">
+                    <div class="tarjeta-contenido">
+                        <div class="logo-marca"><img class="logo-premio-img" src="IMG/ICONOS/MORDIX.svg" alt="MORDIX"></div>
+                        <div class="txt-premio">
+                            <h2> ¡FELICIDADES!</h2>
+                            <p>Has ganado una</p>
+                        </div>
+                        <h3 class="premio-resaltado">¡MANZANA GRATIS!</h3>
+                        <p class="instruccion-wsp">Toma una captura de pantalla y envíanosla por WhatsApp para reclamar tu premio.</p>
+                        <a href="https://wa.me/5219671672527?text=¡Hola!%20Encontré%20el%20huevo%20secreto%20y%20gané%20mi%20manzana%20gratis%20en%20MORDIX" target="_blank" class="btn-whatsapp">
+                            Enviar por WhatsApp 
+                        </a>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer_logo">
+                <img id="logo_pie" src="../../IMG/ICONOS/LOGO_MORDIX_negro.svg" alt="">
+            </div>
+            <div class="contacto-telefonos">
+                <ul>
+                    <li class="txt_footer">967 167 2527</li>
+                    <li class="txt_footer">963 173 7494</li>
+                    <li class="txt_footer">992 141 1917</li>
+                    <li class="txt_footer">E-mail: IrvingMaduro69@gmail.com</li>
+                </ul>
+                <br>
+                <p class="txt_footer">© 2026 MORDIX. Todos los derechos reservados.</p>
+                <p class="txt_footer">Equipo:</p>
+                <p class="txt_footer">Darinel Ulises Hernández Díaz</p>
+                <p class="txt_footer">Kevin Uriel Velazco Hernández</p>
+                <p class="txt_footer">Irvin Alexis Molina Garcia</p>
+                <p class="txt_footer">Jamie Crystal Diaz Santiz</p>
+                <p class="txt_footer">Ana Karen Jiemenez Lopez</p>
+                
+            </div>
+            <div class="footer-sociales">
+                <p class="txt_footer">Redes Sociales</p><br>
+                <a href="https://www.facebook.com/share/1DPNfe78uV/" target="_blank"><img class="sociales-footer" src="../../IMG/ICONOS/facebook-svgrepo-com.svg" alt="Facebook"></a>
+                <a href=""><img class="sociales-footer" src="../../IMG/ICONOS/instagram-1-svgrepo-com.svg" alt="Instagram"></a>
+                <a href=""><img class="sociales-footer" src="../../IMG/ICONOS/tiktok-icon-white-1-logo-svgrepo-com.svg" alt="TikTok"></a>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const modalTerminos = document.getElementById('modal-terminos');
+        const btnSi = document.getElementById('btn-si');
+        const btnNo = document.getElementById('btn-no');
+
+        // Botón Acepto: Oculta el modal y deja interactuar
+        btnSi.addEventListener('click', () => {
+            modalTerminos.classList.add('oculto');
+        });
+
+        // Botón No acepto: Redirige al index principal
+        btnNo.addEventListener('click', () => {
+            window.location.href = "../../index.html";
+        });
+
+        const huevoRojo = document.getElementById('huevo-rojo');
+        const contenedorHuevo = document.getElementById('contenedor-huevo');
+        const textoClicks = document.getElementById('texto-clicks');
+        const tarjetaPremio = document.getElementById('tarjeta-premio');
+
+        let clicsHuevo = 0;
+
+        contenedorHuevo.addEventListener('click', () => {
+            clicsHuevo++;
+
+            if (clicsHuevo === 1) {
+                huevoRojo.classList.add('estado-1');
+                textoClicks.textContent = "¡Crack! (1/5)";
+            } else if (clicsHuevo === 2) {
+                huevoRojo.classList.add('estado-2');
+                textoClicks.textContent = "¡Se está trizando! (2/5)";
+            } else if (clicsHuevo === 3) {
+                huevoRojo.classList.add('estado-3');
+                textoClicks.textContent = "¡Casi se rompe! (3/5)";
+            } else if (clicsHuevo === 4) {
+                huevoRojo.classList.add('estado-4');
+                textoClicks.textContent = "¡Último golpe! (4/5)";
+            } else if (clicsHuevo >= 5) {
+                // Se oculta el huevo y la tarjeta aparece centrada perfectamente
+                contenedorHuevo.classList.add('oculto');
+                tarjetaPremio.classList.remove('oculto');
+            }
+        });
+    </script>
+    
+</body>
+</html>

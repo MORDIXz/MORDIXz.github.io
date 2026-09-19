@@ -1,0 +1,86 @@
+
+/* ==========================================
+   3. SECCIÓN CONTENIDO 1 Y DESCARGA
+   ========================================== */
+.contenido1 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 1rem;
+    grid-template-areas: 
+        "descargar . ."
+        "principal principal principal";
+    min-height: 80vh;
+    background-color: #ce1b1b;
+}
+
+.descargar {
+    grid-area: descargar;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: rgb(255, 255, 255);
+    padding: 1rem 5%;
+    border-radius: 25px;
+}
+
+.descargar a {
+    flex-grow: 1;
+    width: 20%;
+}
+
+.descargar a img {
+    width: 100%;
+}
+
+.descargar-txt {
+    flex-shrink: 1;
+}
+
+/* ==========================================
+   4. VISOR DE PDF (.img-identidad-empresa)
+   ========================================== */
+.img-identidad-empresa {
+    background-color: rgb(250, 250, 250);
+    padding: 2rem 3%;
+    border-radius: 25px;
+    grid-area: principal;
+    
+    /* Flexbox optimizado para apilar y centrar las páginas del PDF */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Estilos aplicados a cada página del PDF generada con PDF.js */
+.img-identidad-empresa canvas {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 900px; /* Evita que se estiren demasiado en pantallas gigantes */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    background-color: white;
+}
+
+@media (max-width: 768px) {
+    .contenido1 {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "descargar"
+            "principal";
+    }
+
+    .descargar {
+        padding: 0.8rem 3%;
+    }
+
+    .descargar a {
+        width: 40%;
+    }
+    
+    .img-identidad-empresa {
+        padding: 1rem 2%;
+    }
+
+}

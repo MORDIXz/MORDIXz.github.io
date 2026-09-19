@@ -1,0 +1,997 @@
+/* ==========================================
+   1. CONFIGURACIÓN GLOBAL Y RESET
+   ========================================== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'MiTipografiaFREDOKA';
+    src: url('FONTS/Fredoka-VariableFont_wdth\,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; 
+}
+
+body {
+    font-family: "MiTipografiaFREDOKA", sans-serif;
+}
+
+p {
+    font-size: medium;
+}
+
+
+ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+li {
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+}
+
+li a:hover,
+.menu-desplegable:hover {
+    color: #ce1b1b;
+}
+h2{
+    margin-bottom: .5rem;
+}
+
+
+
+.caja {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "nav"
+        "main"
+        "footer";
+}
+
+.secciones { 
+    padding: 2rem 5%;
+    margin: 0px 5%;
+    border-radius: 20px;
+}
+
+
+/* ==========================================
+   2. HEADER Y NAVEGACIÓN
+   ========================================== */
+header {
+    background-color: #fff;
+    color: black;
+    grid-area: nav;
+    padding: .5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container {
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+.barra_menu {
+    padding: 1rem 5px;
+}
+
+.menu-hamburguesa, 
+.btn-hamburguesa, 
+.btn-img {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Submenú desplegable de escritorio */
+.menu-desplegable {
+    position: relative;
+    cursor: pointer;
+}
+
+.submenu {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgba(26, 26, 26, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    min-width: 160px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 100;
+}
+
+.submenu li a {
+    font-size: 1.1rem;
+    color: white;
+}
+
+.submenu li a:hover {
+    color: #ce1b1b;
+}
+
+.menu-desplegable.abierto .submenu {
+    display: flex;
+}
+
+/* Botón WhatsApp */
+#svg-whatsapp {
+    display: flex;
+    text-align: center;
+    background-color: #447821;        
+    border-radius: 50px;
+}
+
+#svg-whatsapp > a {
+    padding: 6px 14px; 
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+#svg-whatsapp > a:hover {
+    color: #ff0000;
+}
+
+#svg-whatsapp img {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+
+/* ==========================================
+   3. SECCIÓN PRINCIPAL (MAIN / INICIO)
+   ========================================== */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    background-color: rgb(255, 255, 255);
+    grid-area: main;
+    width: 100%;
+    margin-top: 8rem;
+}
+
+.inicio {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff 0%, #FF0000 100%);
+    border-radius: 20px;
+    padding: 4rem 3rem;
+    margin: 30px auto;
+    max-width: 90%;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between;
+    gap: 4rem;
+    overflow: visible;
+    box-shadow: 0 10px 30px rgba(220, 20, 60, 0.1);
+    border: 2px solid #CE1B1B;
+}
+
+/* Hojas decorativas */
+.hoja {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #447821;
+    z-index: 5;
+}
+
+.hoja-superior-izquierda { top: -20px; left: 20px; border-radius: 10% 70% 10% 70%; transform: rotate(-30deg); }
+.hoja-superior-derecha { top: -20px; right: 20px; border-radius: 70% 10% 70% 10%; transform: rotate(30deg); }
+.hoja-inferior-izquierda { bottom: -20px; left: 20px; border-radius: 70% 10% 70% 10%; transform: rotate(210deg); }
+.hoja-inferior-derecha { bottom: -20px; right: 20px; border-radius: 10% 70% 10% 70%; transform: rotate(150deg); }
+
+.badge-novedad {
+    display: inline-block;
+    background-color: #ff4d6d;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(255, 77, 109, 0.3);
+}
+
+.inicio-texto {
+    flex: 2;
+    text-align: left;
+}
+
+.inicio h1 {
+    font-size: 2.8rem;
+    color: #CE1B1B;
+    margin-bottom: 20px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.inicio p {
+    font-size: 1.2rem;
+    color: #000000;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+.inicio-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.inicio-imagen img {
+    border-radius: 25px;
+    max-width: 100%;
+    width: 320px;
+    height: auto;
+    object-fit: cover;
+    filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.15));
+    transition: transform 0.3s ease;
+}
+
+.inicio-imagen img:hover {
+    transform: scale(1.3) rotate(3deg);
+}
+
+a.cotizar {
+    display: inline-block;
+    background-color: #447821;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(68, 120, 33, 0.4);
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+a.cotizar:hover {
+    background-color: #38641b; 
+    transform: translateY(-5px);
+}
+
+
+/* ==========================================
+   4. SECCIONES DE IDENTIDAD Y PRODUCTOS
+   ========================================== */
+.productos {
+    display: flex;
+    flex-direction: column;
+    background-color: background linear-gradient(135deg, #fffdfa 0%, #f4ede2 100%);
+}
+
+.productos h3 {
+    padding: 10px;
+    text-align: center;
+}
+
+.identidad-marca {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.marca-elementos {
+    background-color: rgb(255, 255, 255);
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+}
+
+.marca-elementos.valores {
+    flex: 1.5;
+}
+
+.valores-lista {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 10px 0px;
+}
+
+.valor-li{
+    background-color: rgb(252, 213, 213);
+    padding:1rem 5%;
+    border-radius: 25px;
+}
+
+/* Propuesta de Valor */
+.propuesta-valor {
+    font-size: medium;
+    background-color: #ffefef;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.propuestas {
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 1rem 5%;
+}
+
+/* Descripción de Manzanas */
+.descripcion-manzanas {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.caja-manzanas {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: .5rem;
+    justify-content: center;
+    gap: 1rem;
+    
+}
+
+.cajas-manzanas-descricpiones {
+    background-color: white;
+    padding: 1rem;
+    flex:0 1 220px;
+    border-radius: 20px;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.cajas-manzanas-descricpiones img {
+    width: 12rem;
+    height: 12rem;
+    object-fit: cover;
+    border-radius: 25px;
+    margin-bottom: 15px;
+}
+
+
+
+
+/* ==========================================
+   CARRUSEL DE IMÁGENES
+   ========================================== */
+.carrusel {
+    background-color: #ffffff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.carrusel h2 {
+    color: #CE1B1B;
+    margin-bottom: 1.5rem;
+    font-size: 3rem;
+}
+
+.carrusel-contenedor {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 100%;
+    max-height: 800px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.carrusel-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrusel-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrusel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Botones de control (Anterior / Siguiente) */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(68, 120, 33, 0.7); /* Verde institucional translúcido */
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carrusel-btn:hover {
+    background-color: #447821;
+}
+
+.carrusel-btn.prev {
+    left: 15px;
+}
+
+.carrusel-btn.next {
+    right: 15px;
+}
+
+/* Puntos indicadores inferiores */
+.carrusel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: #CE1B1B; /* Rojo de la marca */
+}
+
+
+@media (max-width: 768px) {
+    .carrusel-contenedor {
+        height: 450px;
+    }
+}
+
+/*QUIENES SOMOS*/
+.nosotros{
+    text-align: center;
+    background-color: rgb(255, 255, 255);  
+}
+.info-somos{
+    padding:1rem 1rem;
+    background-color: white;
+    border-radius: 25px;
+    text-align: justify;
+}
+
+
+/*Formas de contacto*/
+.contacto{
+    background-color: #d40000ff;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+
+.redes-sociales{
+    display: flex;
+    flex-wrap: wrap;
+    gap:1rem;
+}
+.RS{ 
+    flex:1;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap:.5rem;
+    background-color: white;
+    padding:1rem 5%;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .8);
+    transition: transform 0.3s ease;
+}
+
+.RS:hover{
+    transform: translateY(-8px) scale(1.03);;
+}
+
+.RS img{
+    width: 40px;
+}
+.contacto-icono{
+    display: flex;
+    align-items: center;
+    gap:.5rem;
+}
+
+.btn-sociales{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(191, 241, 191);
+    padding:1rem .3rem;
+    border-radius: 25px;
+    width: 10rem;
+    margin:auto;
+}
+
+.btn-sociales a{
+    text-decoration: none;
+    color:inherit;
+    border-bottom: 2px solid transparent;
+
+}
+
+.btn-sociales:hover{
+    background-color: #447821;
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.mapa{
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    align-items: center;
+}
+iframe{
+    width: 100%;
+    border-radius: 25px;
+}
+
+/* ==========================================
+   SECCIÓN DE MINIJUEGOS
+   ========================================== */
+.juegos {
+    background-color: #fdfbf7; /* Mantiene la armonía limpia y cálida */
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.juegos h2 {
+    color: #CE1B1B; /* Rojo MORDIX */
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.juegos-subtitulo {
+    color: #555555;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    line-height: 1.5;
+}
+
+/* Contenedor Grid Responsivo */
+.juegos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Tarjetas individuales de los minijuegos */
+.juego-card {
+    position: relative;
+    height: 220px;
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    /* Imagen de fondo (puedes cambiar la ruta por la que prefieras) */
+    background-image: url('IMG/Manzanas/manzana2.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+/* Capa oscura translúcida sobre la imagen para que el texto resalte */
+.juego-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45); 
+    transition: background 0.3s ease;
+}
+
+/* Contenido dentro de la tarjeta */
+.juego-contenido {
+    position: relative;
+    z-index: 2;
+    color: white;
+    padding: 20px;
+}
+
+.juego-contenido h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Botón llamativo interno */
+.juego-btn {
+    background-color: #447821; /* Verde institucional MORDIX */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Efectos Hover al pasar el mouse */
+.juego-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(206, 27, 27, 0.25); /* Sutil toque rojizo de marca */
+}
+
+.juego-card:hover .juego-overlay {
+    background: rgba(0, 0, 0, 0.3); /* Aclara un poco la imagen al pasar el mouse */
+}
+
+.juego-card:hover .juego-btn {
+    background-color: #CE1B1B; /* Cambia a rojo MORDIX al hacer hover */
+    transform: scale(1.05);
+}
+
+
+/* ==========================================
+   5. FOOTER
+   ========================================== */
+footer {
+    display: grid;
+    grid-template-columns:repeat(6,1fr);
+    grid-template-areas: "mordix names names names names iconos";
+    background-color: black;
+    color: white;
+    grid-area: footer;
+    padding: 2rem;
+    line-height: 2;
+    gap: .5rem;
+}
+.footer_logo{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+#logo_pie {
+    width: 10rem;
+    object-fit: contain;
+}
+
+.contacto-telefonos {
+
+    grid-area: names;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.contacto-telefonos ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.txt_footer {
+    padding: .2rem;
+    font-size: 0.95rem;
+}
+
+.footer-sociales {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.footer-sociales .div-links, 
+.footer-sociales a {
+    display: inline-block;
+}
+
+.sociales-footer {
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+.sociales-footer:hover {
+    background-color: #fff;
+    border-radius: 25%;
+}
+
+
+
+
+
+/* ==========================================
+   6. DISEÑO RESPONSIVO (CELULARES / MÓVILES)
+   ========================================== */
+@media (max-width: 900px) {
+    header {
+        padding: 1rem;
+    }
+
+    .logo-container {
+        margin-left: 0;
+    }
+
+    .logo-img {
+        height: 60px;
+    }
+
+    /* Mostrar menú hamburguesa */
+    .menu-hamburguesa, 
+    .btn-hamburguesa, 
+    .btn-img {
+        display: block;
+        width: 40px;
+    }
+
+    /* Menú móvil tipo cristal desplegable */
+    .nav-menu {
+        display: none; 
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(26, 26, 26, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 1.5rem;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        max-height: calc(100vh - 80px); 
+        overflow-y: auto; 
+    }
+
+    .nav-menu.activo {
+        display: block;
+    }
+
+    .nav-menu > ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .nav-menu ul li a, 
+    .nav-menu ul li {
+        display: block;
+        width: 100%;
+        padding: 8px 0;
+        border-radius: 6px;
+        transition: background-color 0.3s ease, padding-left 0.3s ease;
+    }
+
+    .nav-menu ul li a:hover,
+    .nav-menu ul li:hover {
+        background-color: #ce1b1b;
+        color: white;
+        padding-left: 8px; 
+    }
+
+    /* Submenú en móviles adaptado en bloque estático */
+    .menu-desplegable .submenu {
+        position: static; 
+        box-shadow: none;
+        background-color: transparent;
+        padding-left: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    header #svg-whatsapp {
+        background-color: transparent;
+    }
+    
+    header #svg-whatsapp a {
+        color: black;
+        padding: 0;
+    }
+
+    /* Ajustes generales de secciones para pantallas chicas */
+    main {
+        margin-top: 7rem;
+    }
+
+    .inicio {
+        flex-direction: column;
+        padding: 25px 15px;
+        margin: 15px auto;
+        max-width: 95%;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .inicio-texto {
+        text-align: center;
+    }
+
+    .inicio h1 {
+        font-size: 1.9rem;
+    }
+
+    .inicio p {
+        font-size: 1rem;
+    }
+
+    .inicio-imagen img {
+        width: 240px;
+        margin-top: 10px;
+    }
+
+    .secciones {
+        padding: 1.5rem 3%;
+        margin: 0px 2%;
+    }
+
+    .contacto-telefonos {
+        text-align: center;
+    }
+
+    footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:2rem;
+    padding: 2rem;
+    line-height:1;
+}
+}
+
+
+/*THUNDER*/
+.maestro-thunder{
+    font-size: medium;
+    font-weight: bolder;
+
+}
+
+.maestro-thunder a{
+    color:white;
+    text-decoration: none;
+    cursor:text;
+}
+
+/* Estilos de la sección y contenedor al 80% */
+    .seccion-evento {
+        text-align: center;
+        padding: 3rem 1.5rem;
+        background-color: #111; /* Fondo oscuro para resaltar el neón */
+        border-radius: 25px;
+        margin: 2rem auto;
+        width: 80%; /* Ancho ajustado al 80% como pediste */
+        max-width: 1000px; /* Límite para que no se estire de más en pantallas gigantes */
+        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+        border: 2px solid rgba(255, 107, 107, 0.2);
+    }
+
+    .neon-titulo {
+        font-size: 2.8rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-family: 'Arial', sans-serif;
+        letter-spacing: 4px;
+        margin-bottom: 1.8rem;
+        /* Animación neón con Verde Claro y Rojo Suave combinados con la marca */
+        animation: neonVerdeRojo 3s infinite alternate;
+    }
+
+    @keyframes neonVerdeRojo {
+        0% {
+            color: #51cf66; /* Verde claro vibrante */
+            text-shadow: 0 0 8px #51cf66, 0 0 15px #37b24d, 0 0 30px #2b8a3e, 0 0 60px #2b8a3e;
+        }
+        50% {
+            color: #ff8787; /* Rojo suave / manzana */
+            text-shadow: 0 0 8px #ff8787, 0 0 15px #fa5252, 0 0 30px #e03131, 0 0 60px #e03131;
+        }
+        100% {
+            color: #69db7c; /* Tono intermedio de verde brillante */
+            text-shadow: 0 0 8px #69db7c, 0 0 15px #40c057, 0 0 30px #2f9e44, 0 0 60px #2f9e44;
+        }
+    }
+
+    /* Estilos para el texto de apoyo en sintonía con los colores */
+    .instrucciones-evento {
+        color: #e9ecef;
+        font-size: 1.15rem;
+        line-height: 1.7;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    .instrucciones-evento p {
+        margin-bottom: 1rem;
+    }
+
+    .pista-resaltada {
+        color: #51cf66; /* Verde claro de apoyo para resaltar la pista */
+        font-weight: bold;
+        margin-top: 1.5rem;
+        font-size: 1.2rem;
+        text-shadow: 0 0 10px rgba(81, 207, 102, 0.3);
+    }
+
+    .ocultar-temporada {
+    display: none;
+}

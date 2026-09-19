@@ -1,0 +1,199 @@
+/* ==========================================
+   1. CONFIGURACIÓN GLOBAL Y RESET
+   ========================================== */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'MiTipografiaFREDOKA';
+    src: url('FONTS/Fredoka-VariableFont_wdth\,wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden; 
+}
+
+body {
+    font-family: "MiTipografiaFREDOKA", sans-serif;
+}
+
+h2 {
+    margin-bottom: .5rem;
+}
+
+ul {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+}
+
+li {
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+}
+
+p {
+    font-size: x-large;
+    text-align: justify;
+}
+
+/* ==========================================
+   2. LAYOUT PRINCIPAL (GRID)
+   ========================================== */
+.caja {
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "nav"
+        "main"
+        "footer";
+}
+
+header {
+    background-color: #fff;
+    color: black;
+    grid-area: nav;
+    padding: .5rem 2rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .3);
+}
+
+.logo-container {
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.logo-img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+    grid-area: main;
+    width: 100%;
+    margin-top: 8rem;
+    padding: 1rem;
+}
+
+.secciones { 
+    padding: 2rem 5%;
+    margin: 0px 3%;
+    border-radius: 20px;
+}
+span {
+    color: #ce1b1b;
+    font-weight: bolder;
+}
+
+
+
+/* ==========================================
+   5. FOOTER
+   ========================================== */
+footer {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-areas: "mordix names names names names iconos";
+    background-color: black;
+    color: white;
+    grid-area: footer;
+    padding: 2rem;
+    line-height: 2;
+    gap: .5rem;
+}
+
+.footer_logo {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#logo_pie {
+    width: 10rem;
+    object-fit: contain;
+}
+
+.contacto-telefonos {
+    grid-area: names;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contacto-telefonos ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.txt_footer {
+    padding: .2rem;
+    font-size: 0.95rem;
+}
+
+.footer-sociales {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-sociales a {
+    display: inline-block;
+}
+
+.sociales-footer {
+    width: 60px;
+    height: 60px;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+.sociales-footer:hover {
+    background-color: #fff;
+    border-radius: 25%;
+}
+
+/* ==========================================
+   6. RESPONSIVE (MEDIA QUERIES)
+   ========================================== */
+@media (max-width: 900px) {
+    footer {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem;
+        line-height: 1;
+    }
+}

@@ -1,0 +1,2659 @@
+/* =========================================================
+   MORDIX - HOJA DE ESTILOS PRINCIPAL
+   ========================================================= */
+
+
+/* =========================================================
+   VARIABLES GENERALES
+   ========================================================= */
+
+:root {
+
+    /* =====================================================
+       COLORES PRINCIPALES DE MORDIX
+       ===================================================== */
+
+    --color-negro: #000000;
+    --color-blanco: #ffffff;
+
+    --color-rojo: #ff0000;
+    --color-rojo-mordix: #CE1B1B;
+    --color-rojo-oscuro: #a91515;
+    --color-rojo-hover: #8f1111;
+
+    --color-verde: #447821;
+    --color-verde-oscuro: #315b19;
+    --color-verde-profundo: #243f16;
+    --color-verde-claro: #dfead8;
+
+    --color-azul-oscuro: #083838;
+    --color-azul: #092994;
+    --color-azul-gris: #577979;
+    --color-azul-claro: #84C1D9;
+
+
+    /* =====================================================
+       COLORES SECUNDARIOS
+       ===================================================== */
+
+    --color-crema: #fffdfa;
+    --color-crema-oscuro: #f4ede2;
+
+    --color-rosa-claro: #fcd5d5;
+    --color-rosa-muy-claro: #fff5f5;
+
+    --color-gris: #4d4d4d;
+    --color-gris-claro: #cccccc;
+    --color-gris-evento: #e9ecef;
+
+    --color-fondo-evento: #111b0d;
+
+    --color-badge: #ff4d6d;
+
+
+    /* =====================================================
+       COLORES PARA EL EFECTO THUNDER
+       ===================================================== */
+
+    --color-verde-neon: #51cf66;
+    --color-verde-neon-2: #37b24d;
+    --color-verde-neon-3: #2b8a3e;
+
+    --color-verde-neon-4: #69db7c;
+    --color-verde-neon-5: #40c057;
+    --color-verde-neon-6: #2f9e44;
+
+    --color-rosa-neon: #ff8787;
+    --color-rojo-neon: #fa5252;
+    --color-rojo-neon-2: #e03131;
+
+
+    /* =====================================================
+       FONDOS DE LAS SECCIONES
+       ===================================================== */
+
+    --fondo-principal: #ffffff;
+
+    --fondo-productos: #f5f8f1;
+
+    --fondo-identidad: #ffffff;
+
+    --fondo-propuesta: #fff5f5;
+
+    --fondo-nosotros: #f1f6ed;
+
+    --fondo-contacto: #ef483f;
+
+    --fondo-mapa: #f8faf6;
+
+    --fondo-juegos: #f5f7f3;
+
+    --fondo-footer: #000000;
+
+    --fondo-evento: #111b0d;
+
+
+    /* =====================================================
+       FONDOS DE TARJETAS
+       ===================================================== */
+
+    --fondo-card: #ffffff;
+
+    --fondo-card-verde: #eaf2e5;
+
+    --fondo-card-rojo: #fff0f0;
+
+    --fondo-valor: #f9e2e2;
+
+
+    /* =====================================================
+       COLORES DE TEXTO
+       ===================================================== */
+
+    --texto-principal: #000000;
+
+    --texto-blanco: #ffffff;
+
+    --texto-rojo: #CE1B1B;
+
+    --texto-verde: #315b19;
+
+    --texto-gris: #4d4d4d;
+
+    --texto-evento: #e9ecef;
+
+
+    /* =====================================================
+       TRANSPARENCIAS
+       ===================================================== */
+
+    --negro-05: rgba(0, 0, 0, 0.05);
+    --negro-10: rgba(0, 0, 0, 0.10);
+    --negro-15: rgba(0, 0, 0, 0.15);
+    --negro-20: rgba(0, 0, 0, 0.20);
+    --negro-30: rgba(0, 0, 0, 0.30);
+    --negro-40: rgba(0, 0, 0, 0.40);
+    --negro-45: rgba(0, 0, 0, 0.45);
+    --negro-50: rgba(0, 0, 0, 0.50);
+    --negro-80: rgba(0, 0, 0, 0.80);
+
+    --verde-30: rgba(68, 120, 33, 0.30);
+    --verde-40: rgba(68, 120, 33, 0.40);
+    --verde-70: rgba(68, 120, 33, 0.70);
+
+    --rojo-20: rgba(206, 27, 27, 0.20);
+    --rojo-25: rgba(206, 27, 27, 0.25);
+
+    --rosa-neon-20: rgba(255, 107, 107, 0.20);
+
+    --verde-neon-30: rgba(81, 207, 102, 0.30);
+
+
+    /* =====================================================
+       TAMAÑOS DE TEXTO
+       ===================================================== */
+
+    --font-base: 1rem;
+
+    /* Texto general */
+    --font-p: 1.4rem;
+
+    /* Texto grande */
+    --font-p-grande: 1.2rem;
+
+    /* Elementos del menú */
+    --font-li: 1.3rem;
+
+    /* Títulos */
+    --font-h1: 2.8rem;
+    --font-h2: 2rem;
+    --font-h3: 1.5rem;
+
+    /* Textos secundarios */
+    --font-subtitulo: 1.1rem;
+    --font-pequena: 0.95rem;
+
+    /* Botones */
+    --font-badge: 1.1rem;
+    --font-boton: 1rem;
+
+
+    /* =====================================================
+       TAMAÑOS RESPONSIVOS
+       ===================================================== */
+
+    --font-h1-tablet: 2.3rem;
+    --font-h1-mobile: 1.9rem;
+
+    --font-h2-tablet: 2.4rem;
+    --font-h2-mobile: 2rem;
+
+    --font-p-mobile: 1rem;
+
+
+    /* =====================================================
+       SEPARACIÓN DE TÍTULOS
+       ===================================================== */
+
+    --separacion-titulo: 1rem;
+
+
+    /* =====================================================
+       ESPACIADOS
+       ===================================================== */
+
+    --espacio-xs: 0.5rem;
+    --espacio-sm: 1rem;
+    --espacio-md: 1.5rem;
+    --espacio-lg: 2rem;
+    --espacio-xl: 3rem;
+    --espacio-xxl: 4rem;
+
+
+    /* =====================================================
+       BORDES
+       ===================================================== */
+
+    --radio-sm: 10px;
+    --radio-md: 20px;
+    --radio-lg: 25px;
+    --radio-redondo: 50px;
+
+
+    /* =====================================================
+       SOMBRAS
+       ===================================================== */
+
+    --sombra-header:
+        0 2px 10px var(--negro-30);
+
+    --sombra-suave:
+        0 4px 15px var(--negro-05);
+
+    --sombra-card:
+        0 10px 25px var(--negro-10);
+
+    --sombra-grande:
+        0 10px 30px rgba(220, 20, 60, 0.10);
+
+    --sombra-juego:
+        0 10px 20px var(--negro-10);
+
+    --sombra-juego-hover:
+        0 15px 30px var(--rojo-25);
+
+    --sombra-evento:
+        0 15px 35px var(--negro-40);
+
+
+    /* =====================================================
+       TRANSICIONES
+       ===================================================== */
+
+    --transicion-rapida: 0.3s ease;
+
+    --transicion-media: 0.5s ease-in-out;
+
+
+    /* =====================================================
+       DIMENSIONES
+       ===================================================== */
+
+    --logo-desktop: 80px;
+
+    --logo-mobile: 60px;
+
+    --ancho-contenido: 90%;
+
+    --ancho-evento: 80%;
+
+    --ancho-maximo-evento: 1000px;
+}
+
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+@font-face {
+
+    font-family: 'MiTipografiaFREDOKA';
+
+    src:
+        url('FONTS/Fredoka-VariableFont_wdth\,wght.ttf')
+        format('truetype');
+
+    font-weight: normal;
+
+    font-style: normal;
+}
+
+
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+body {
+
+    font-family:
+        "MiTipografiaFREDOKA",
+        sans-serif;
+
+    font-size: var(--font-base);
+
+    color: var(--texto-principal);
+}
+
+
+/* =========================================================
+   TÍTULOS
+   ========================================================= */
+
+h1,
+h2,
+h3 {
+
+    margin-top: 0;
+
+    margin-bottom:
+        var(--separacion-titulo);
+}
+
+
+/* =========================================================
+   PÁRRAFOS
+   ========================================================= */
+
+p {
+
+    font-size:
+        var(--font-p);
+
+    line-height: 1.5;
+
+    
+}
+
+
+/* =========================================================
+   LISTAS
+   ========================================================= */
+
+ul {
+
+    display: flex;
+
+    gap: var(--espacio-sm);
+
+    list-style: none;
+}
+
+
+li {
+
+    font-size:
+        var(--font-li);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        color var(--transicion-rapida);
+}
+
+
+li a {
+
+    color:
+        var(--color-negro);
+
+    text-decoration: none;
+}
+
+
+li a:hover,
+.menu-desplegable:hover {
+
+    color:
+        var(--color-rojo-mordix);
+}
+
+
+/* =========================================================
+   ESTRUCTURA PRINCIPAL
+   ========================================================= */
+
+.caja {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    grid-template-rows:
+        auto
+        1fr
+        auto;
+
+    grid-template-areas:
+        "nav"
+        "main"
+        "footer";
+}
+
+
+.secciones {
+
+    padding:
+        var(--espacio-lg) 5%;
+
+    margin:
+        0 5%;
+
+    border-radius:
+        var(--radio-md);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header {
+
+    background-color:
+        var(--color-blanco);
+
+    color:
+        var(--color-negro);
+
+    grid-area: nav;
+
+    padding:
+        var(--espacio-xs)
+        var(--espacio-lg);
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+    box-shadow:
+        var(--sombra-header);
+}
+
+
+.logo-container {
+
+    margin-left:
+        var(--espacio-lg);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 0.8rem;
+}
+
+
+.logo-img {
+
+    height:
+        var(--logo-desktop);
+
+    width: auto;
+
+    object-fit: contain;
+}
+
+
+.barra_menu {
+
+    padding:
+        var(--espacio-sm)
+        5px;
+}
+
+
+.menu-hamburguesa,
+.btn-hamburguesa,
+.btn-img {
+
+    display: none;
+
+    background: none;
+
+    border: none;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MENÚ DESPLEGABLE
+   ========================================================= */
+
+.menu-desplegable {
+
+    position: relative;
+
+    cursor: pointer;
+}
+
+
+.submenu {
+
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+
+    background-color:
+        rgba(26, 26, 26, 0.90);
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    flex-direction: column;
+
+    gap:
+        var(--espacio-xs);
+
+    padding:
+        var(--espacio-sm);
+
+    min-width: 160px;
+
+    box-shadow:
+        0 4px 6px var(--negro-30);
+
+    z-index: 100;
+}
+
+
+.submenu li a {
+
+    font-size: 1.1rem;
+
+    color:
+        var(--color-blanco);
+}
+
+
+.submenu li a:hover {
+
+    color:
+        var(--color-rojo-mordix);
+}
+
+
+.menu-desplegable.abierto .submenu {
+
+    display: flex;
+}
+
+
+/* =========================================================
+   WHATSAPP
+   ========================================================= */
+
+#svg-whatsapp {
+
+    display: flex;
+
+    text-align: center;
+
+    background-color:
+        var(--color-verde);
+
+    border-radius:
+        var(--radio-redondo);
+}
+
+
+#svg-whatsapp > a {
+
+    padding:
+        6px 14px;
+
+    color:
+        var(--color-blanco);
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        var(--espacio-xs);
+}
+
+
+#svg-whatsapp > a:hover {
+
+    color:
+        var(--color-rojo);
+}
+
+
+#svg-whatsapp img {
+
+    width: 25px;
+
+    height: 25px;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap:
+        var(--espacio-xs);
+
+    background-color:
+        var(--fondo-principal);
+
+    grid-area: main;
+
+    width: 100%;
+
+    margin-top: 8rem;
+}
+
+
+/* =========================================================
+   INICIO
+   ========================================================= */
+
+.inicio {
+
+    position: relative;
+
+    /* Se conserva el diseño original */
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #FF0000 100%
+        );
+
+    border-radius:
+        var(--radio-md);
+
+    padding:
+        var(--espacio-xxl)
+        var(--espacio-xl);
+
+    margin:
+        30px auto;
+
+    max-width:
+        var(--ancho-contenido);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        var(--espacio-xxl);
+
+    overflow: visible;
+
+    box-shadow:
+        var(--sombra-grande);
+
+    border:
+        2px solid
+        var(--color-rojo-mordix);
+}
+
+
+.hoja {
+
+    position: absolute;
+
+    width: 60px;
+
+    height: 60px;
+
+    background-color:
+        var(--color-verde);
+
+    z-index: 5;
+}
+
+
+.hoja-superior-izquierda {
+
+    top: -20px;
+
+    left: 20px;
+
+    border-radius:
+        10% 70% 10% 70%;
+
+    transform:
+        rotate(-30deg);
+}
+
+
+.hoja-superior-derecha {
+
+    top: -20px;
+
+    right: 20px;
+
+    border-radius:
+        70% 10% 70% 10%;
+
+    transform:
+        rotate(30deg);
+}
+
+
+.hoja-inferior-izquierda {
+
+    bottom: -20px;
+
+    left: 20px;
+
+    border-radius:
+        70% 10% 70% 10%;
+
+    transform:
+        rotate(210deg);
+}
+
+
+.hoja-inferior-derecha {
+
+    bottom: -20px;
+
+    right: 20px;
+
+    border-radius:
+        10% 70% 10% 70%;
+
+    transform:
+        rotate(150deg);
+}
+
+
+.badge-novedad {
+
+    display: inline-block;
+
+    background-color:
+        var(--color-badge);
+
+    color:
+        var(--color-blanco);
+
+    padding:
+        6px 14px;
+
+    border-radius:
+        var(--radio-redondo);
+
+    font-size:
+        var(--font-badge);
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+    box-shadow:
+        0 4px 10px
+        rgba(255, 77, 109, 0.30);
+}
+
+
+.inicio-texto {
+
+    flex: 2;
+
+    text-align: left;
+}
+
+
+.inicio h1 {
+
+    font-size:
+        var(--font-h1);
+
+    color:
+        var(--color-rojo-mordix);
+
+    margin-bottom:
+        var(--separacion-titulo);
+
+    font-weight: 800;
+
+    line-height: 1.2;
+}
+
+
+.inicio p {
+
+    font-size:
+        var(--font-p-grande);
+
+    color:
+        var(--color-negro);
+
+    line-height: 1.6;
+
+    font-weight: 500;
+
+    text-align: justify;
+}
+
+
+.inicio-imagen {
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.inicio-imagen img {
+
+    border-radius:
+        var(--radio-lg);
+
+    max-width: 100%;
+
+    width: 320px;
+
+    height: auto;
+
+    object-fit: cover;
+
+    filter:
+        drop-shadow(
+            0 15px 25px
+            var(--negro-15)
+        );
+
+    transition:
+        transform var(--transicion-rapida);
+}
+
+
+.inicio-imagen img:hover {
+
+    transform:
+        scale(1.3)
+        rotate(3deg);
+}
+
+
+/* =========================================================
+   BOTÓN COTIZAR
+   ========================================================= */
+
+a.cotizar {
+
+    display: inline-block;
+
+    background-color:
+        var(--color-verde);
+
+    color:
+        var(--color-blanco);
+
+    font-size:
+        var(--font-boton);
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    padding:
+        0.8rem 1.8rem;
+
+    border-radius:
+        var(--radio-redondo);
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 15px
+        var(--verde-40);
+
+    transition:
+        all var(--transicion-rapida);
+
+    margin-top:
+        var(--espacio-sm);
+
+    text-align: center;
+}
+
+
+a.cotizar:hover {
+
+    background-color:
+        var(--color-verde-oscuro);
+
+    transform:
+        translateY(-5px);
+}
+
+
+/* =========================================================
+   PRODUCTOS
+   ========================================================= */
+
+.productos {
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        var(--fondo-productos);
+}
+
+
+.productos h3 {
+
+    padding: 10px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   IDENTIDAD DE MARCA
+   ========================================================= */
+
+.identidad-marca {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    flex-wrap: wrap;
+
+    gap:
+        var(--espacio-sm);
+
+    margin-top:
+        var(--espacio-sm);
+
+    background-color:
+        var(--fondo-identidad);
+}
+
+
+.marca-elementos {
+
+    background-color:
+        var(--fondo-card);
+
+    padding:
+        var(--espacio-sm);
+
+    border-radius:
+        var(--radio-md);
+
+    box-shadow:
+        var(--sombra-card);
+
+    flex:
+        1 1 20px;
+
+    min-width: 250px;
+}
+
+
+
+.marca-elementos.valores {
+
+    flex:
+        1.5 1 300px;
+}
+
+
+.valores-lista {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap:
+        var(--espacio-xs);
+
+    padding:
+        10px 0;
+}
+
+
+.valor-li {
+
+    background-color:
+        var(--fondo-valor);
+
+    padding:
+        var(--espacio-sm) 5%;
+
+    border-radius:
+        var(--radio-lg);
+}
+
+
+/* =========================================================
+   PROPUESTA DE VALOR
+   ========================================================= */
+
+.propuesta-valor {
+
+    font-size:
+        var(--font-p);
+
+    background-color:
+        var(--fondo-propuesta);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap:
+        var(--espacio-sm);
+}
+
+
+.propuestas {
+
+    display: flex;
+
+    background-color:
+        var(--fondo-card);
+
+    flex-direction: column;
+
+    border-radius:
+        var(--radio-md);
+
+    padding:
+        var(--espacio-sm) 5%;
+}
+
+
+.propuestas p {
+
+    text-align: justify;
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN DE LAS MANZANAS
+   ========================================================= */
+
+ .descripcion-manzanas {
+    margin-top: var(--espacio-xxl);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.caja-manzanas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--espacio-sm);
+    margin-top: var(--espacio-xs);
+    width: 100%;
+    max-width: 100%;
+}
+
+.cajas-manzanas-descricpiones {
+    background-color: var(--fondo-card);
+    padding: var(--espacio-sm);
+    border-radius: var(--radio-md);
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--negro-05);
+}
+
+.cajas-manzanas-descricpiones img {
+    width: 12rem;
+    height: 12rem;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: var(--radio-lg);
+    margin-bottom: 15px;
+}
+
+.cajas-manzanas-descricpiones h3 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.cajas-manzanas-descricpiones p {
+    width: 100%;
+    max-width: 100%;
+    /*text-align: justify;*/
+    font-size: var(--font-p);
+    line-height: 1.5;
+    /*overflow-wrap: anywhere;*/
+}
+
+/* =========================================================
+   CARRUSEL
+   ========================================================= */
+
+.carrusel {
+
+    background-color:
+        var(--color-blanco);
+
+    text-align: center;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.carrusel h2 {
+
+    color:
+        var(--color-rojo-mordix);
+
+    margin-bottom:
+        var(--espacio-md);
+
+    font-size: 3rem;
+}
+
+
+.carrusel-contenedor {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    height: 100%;
+
+    max-height: 800px;
+
+    overflow: hidden;
+
+    border-radius:
+        var(--radio-md);
+
+    box-shadow:
+        var(--sombra-card);
+
+    background-color:
+        var(--color-blanco);
+}
+
+
+.carrusel-track {
+
+    display: flex;
+
+    width: 100%;
+
+    height: 100%;
+
+    transition:
+        transform var(--transicion-media);
+}
+
+
+.carrusel-slide {
+
+    min-width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.carrusel-slide img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+.carrusel-btn {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%);
+
+    background-color:
+        var(--verde-70);
+
+    color:
+        var(--color-blanco);
+
+    border: none;
+
+    font-size: 1.5rem;
+
+    padding:
+        10px 15px;
+
+    cursor: pointer;
+
+    border-radius: 50%;
+
+    transition:
+        background-color var(--transicion-rapida);
+
+    z-index: 10;
+}
+
+
+.carrusel-btn:hover {
+
+    background-color:
+        var(--color-verde);
+}
+
+
+.carrusel-btn.prev {
+
+    left: 15px;
+}
+
+
+.carrusel-btn.next {
+
+    right: 15px;
+}
+
+
+.carrusel-dots {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top:
+        var(--espacio-sm);
+}
+
+
+.dot {
+
+    width: 12px;
+
+    height: 12px;
+
+    background-color:
+        var(--color-gris-claro);
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition:
+        background-color var(--transicion-rapida);
+}
+
+
+.dot.active {
+
+    background-color:
+        var(--color-rojo-mordix);
+}
+
+
+/* =========================================================
+   NOSOTROS
+   ========================================================= */
+
+.nosotros {
+
+    text-align: center;
+
+    background-color:
+        var(--fondo-nosotros);
+}
+
+
+.info-somos {
+
+    padding:
+        var(--espacio-sm);
+
+    background-color:
+        var(--color-blanco);
+
+    border-radius:
+        var(--radio-lg);
+
+    text-align: justify;
+}
+
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+
+.contacto {
+
+    background-color:
+        var(--fondo-contacto);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap:
+        var(--espacio-sm);
+}
+
+
+.redes-sociales {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap:
+        var(--espacio-sm);
+}
+
+
+.RS {
+
+    flex: 1;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    flex-direction: column;
+
+    gap:
+        var(--espacio-xs);
+
+    background-color:
+        var(--color-blanco);
+
+    padding:
+        var(--espacio-sm) 5%;
+
+    border-radius:
+        var(--radio-lg);
+
+    box-shadow:
+        0 10px 25px
+        var(--negro-80);
+
+    transition:
+        transform var(--transicion-rapida);
+}
+
+
+.RS:hover {
+
+    transform:
+        translateY(-8px)
+        scale(1.03);
+}
+
+
+.RS img {
+
+    width: 40px;
+}
+
+
+.contacto-icono {
+
+    display: flex;
+
+    align-items: center;
+
+    gap:
+        var(--espacio-xs);
+}
+
+
+.btn-sociales {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color:
+        var(--color-verde-claro);
+
+    padding:
+        var(--espacio-sm)
+        0.3rem;
+
+    border-radius:
+        var(--radio-lg);
+
+    width: 10rem;
+
+    margin: auto;
+}
+
+
+.btn-sociales a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+    border-bottom:
+        2px solid transparent;
+}
+
+
+.btn-sociales:hover {
+
+    background-color:
+        var(--color-verde);
+
+    color:
+        var(--color-blanco);
+
+    font-weight: bolder;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   MAPA
+   ========================================================= */
+
+.mapa {
+
+    background-color:
+        var(--fondo-mapa);
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap:
+        var(--espacio-sm);
+
+    align-items: center;
+}
+
+
+iframe {
+
+    width: 100%;
+
+    border-radius:
+        var(--radio-lg);
+}
+
+
+/* =========================================================
+   JUEGOS
+   ========================================================= */
+
+.juegos {
+
+    background-color:
+        var(--fondo-juegos);
+
+    text-align: center;
+
+    padding:
+        var(--espacio-xl)
+        var(--espacio-sm);
+}
+
+
+.juegos h2 {
+
+    color:
+        var(--color-rojo-mordix);
+
+    font-size: 2.2rem;
+
+    margin-bottom:
+        var(--espacio-xs);
+}
+
+
+.juegos-subtitulo {
+
+    color:
+        var(--texto-gris);
+
+    font-size:
+        var(--font-subtitulo);
+
+    max-width: 600px;
+
+    margin:
+        0 auto 2.5rem auto;
+
+    line-height: 1.5;
+
+    text-align: justify;
+}
+
+
+.juegos-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(100px, 1fr)
+        );
+
+    gap: 25px;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+}
+
+
+.juego-card {
+
+    position: relative;
+
+    height: 220px;
+
+    border-radius:
+        var(--radio-md);
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    justify-content: center;
+
+    box-shadow:
+        var(--sombra-juego);
+
+    transition:
+        transform var(--transicion-rapida),
+        box-shadow var(--transicion-rapida);
+
+}
+.card1{
+     background-image:
+        url('IMAGENES/JUEGOS/MEMORAMA/LogoMemorama.png');
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.card2{
+     background-image:
+        url('IMG/ICONOS/MORDIX.svg');
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+
+
+.juego-overlay {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background:
+        var(--negro-45);
+
+    transition:
+        background var(--transicion-rapida);
+}
+
+
+.juego-contenido {
+
+    position: relative;
+
+    z-index: 2;
+
+    color:
+        var(--color-blanco);
+
+    padding: 20px;
+}
+
+
+.juego-contenido h3 {
+
+    font-size: 1.8rem;
+
+    margin-bottom: 15px;
+
+    text-shadow:
+        0 2px 4px
+        var(--negro-50);
+}
+
+
+.juego-btn {
+
+    background-color:
+        var(--color-verde);
+
+    color:
+        var(--color-blanco);
+
+    padding:
+        10px 20px;
+
+    border-radius: 30px;
+
+    font-weight: bold;
+
+    font-size:
+        var(--font-boton);
+
+    box-shadow:
+        0 4px 10px
+        var(--negro-20);
+
+    transition:
+        background-color var(--transicion-rapida),
+        transform var(--transicion-rapida);
+
+    display: inline-block;
+}
+
+
+.juego-card:hover {
+
+    transform:
+        translateY(-8px);
+
+    box-shadow:
+        var(--sombra-juego-hover);
+}
+
+
+.juego-card:hover .juego-overlay {
+
+    background:
+        var(--negro-30);
+}
+
+
+.juego-card:hover .juego-btn {
+
+    background-color:
+        var(--color-rojo-mordix);
+
+    transform:
+        scale(1.05);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    grid-template-areas:
+        "mordix names names names names iconos";
+
+    background-color:
+        var(--fondo-footer);
+
+    color:
+        var(--color-blanco);
+
+    grid-area: footer;
+
+    padding:
+        var(--espacio-lg);
+
+    line-height: 2;
+
+    gap:
+        var(--espacio-xs);
+}
+
+
+.footer_logo {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: center;
+}
+
+
+#logo_pie {
+
+    width: 10rem;
+
+    object-fit: contain;
+}
+
+
+.contacto-telefonos {
+
+    grid-area: names;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.contacto-telefonos ul {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+}
+
+
+.txt_footer {
+
+    padding: 0.2rem;
+
+    font-size:
+        var(--font-pequena);
+}
+
+
+.footer-sociales {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+}
+
+
+.footer-sociales .div-links,
+.footer-sociales a {
+
+    display: inline-block;
+}
+
+
+.sociales-footer {
+
+    width: 60px;
+
+    height: 60px;
+
+    padding: 5px;
+
+    margin: 0 5px;
+}
+
+
+.sociales-footer:hover {
+
+    background-color:
+        var(--color-blanco);
+
+    border-radius: 25%;
+}
+
+
+/* =========================================================
+   TEXTO THUNDER
+   ========================================================= */
+
+.maestro-thunder {
+
+    font-size:
+        var(--font-base);
+
+    font-weight: bolder;
+}
+
+
+.maestro-thunder a {
+
+    color:
+        var(--color-blanco);
+
+    text-decoration: none;
+
+    cursor: text;
+}
+
+
+/* =========================================================
+   EVENTO DE TEMPORADA
+   ========================================================= */
+
+.seccion-evento {
+
+    text-align: center;
+
+    padding:
+        var(--espacio-xl)
+        var(--espacio-md);
+
+    background-color:
+        var(--fondo-evento);
+
+    border-radius:
+        var(--radio-lg);
+
+    margin:
+        var(--espacio-lg)
+        auto;
+
+    width:
+        var(--ancho-evento);
+
+    max-width:
+        var(--ancho-maximo-evento);
+
+    box-shadow:
+        var(--sombra-evento);
+
+    border:
+        2px solid
+        var(--rosa-neon-20);
+}
+
+
+.neon-titulo {
+
+    font-size: 2.8rem;
+
+    font-weight: 900;
+
+    text-transform: uppercase;
+
+    font-family:
+        'Arial',
+        sans-serif;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 1.8rem;
+
+    animation:
+        neonVerdeRojo
+        3s
+        infinite
+        alternate;
+}
+
+
+@keyframes neonVerdeRojo {
+
+    0% {
+
+        color:
+            var(--color-verde-neon);
+
+        text-shadow:
+
+            0 0 8px
+            var(--color-verde-neon),
+
+            0 0 15px
+            var(--color-verde-neon-2),
+
+            0 0 30px
+            var(--color-verde-neon-3),
+
+            0 0 60px
+            var(--color-verde-neon-3);
+    }
+
+
+    50% {
+
+        color:
+            var(--color-rosa-neon);
+
+        text-shadow:
+
+            0 0 8px
+            var(--color-rosa-neon),
+
+            0 0 15px
+            var(--color-rojo-neon),
+
+            0 0 30px
+            var(--color-rojo-neon-2),
+
+            0 0 60px
+            var(--color-rojo-neon-2);
+    }
+
+
+    100% {
+
+        color:
+            var(--color-verde-neon-4);
+
+        text-shadow:
+
+            0 0 8px
+            var(--color-verde-neon-4),
+
+            0 0 15px
+            var(--color-verde-neon-5),
+
+            0 0 30px
+            var(--color-verde-neon-6),
+
+            0 0 60px
+            var(--color-verde-neon-6);
+    }
+}
+
+
+.instrucciones-evento {
+
+    color:
+        var(--texto-evento);
+
+    font-size: 1.15rem;
+
+    line-height: 1.7;
+
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    text-align: justify;
+}
+
+
+.instrucciones-evento p {
+
+    margin-bottom:
+        var(--espacio-sm);
+}
+
+
+.pista-resaltada {
+
+    color:
+        var(--color-verde-neon);
+
+    font-weight: bold;
+
+    margin-top:
+        var(--espacio-md);
+
+    font-size: 1.2rem;
+
+    text-shadow:
+        0 0 10px
+        var(--verde-neon-30);
+}
+
+
+/* =========================================================
+   OCULTAR EVENTO DE TEMPORADA
+   ========================================================= */
+
+.ocultar-temporada {
+
+    display: none;
+}
+
+
+/* =========================================================
+   TABLET
+   901px - 1100px
+   ========================================================= */
+
+@media (min-width: 901px) and (max-width: 1100px) {
+
+    /* -----------------------------------------------
+       MANZANAS
+       ----------------------------------------------- */
+    .caja-manzanas {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--espacio-sm);
+    }
+
+    .cajas-manzanas-descricpiones {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .cajas-manzanas-descricpiones p {
+        font-size: 1.15rem;
+    }
+
+
+    /* -----------------------------------------------
+       TÍTULO PRINCIPAL
+       ----------------------------------------------- */
+
+    .inicio h1 {
+
+        font-size:
+            var(--font-h1-tablet);
+    }
+}
+
+
+/* =========================================================
+   TABLET / MÓVIL
+   HASTA 900px
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* -----------------------------------------------
+       HEADER
+       ----------------------------------------------- */
+
+    header {
+
+        padding:
+            var(--espacio-sm);
+    }
+
+
+    .logo-container {
+
+        margin-left: 0;
+    }
+
+
+    .logo-img {
+
+        height:
+            var(--logo-mobile);
+    }
+
+
+    .menu-hamburguesa,
+    .btn-hamburguesa,
+    .btn-img {
+
+        display: block;
+
+        width: 40px;
+    }
+
+
+    /* -----------------------------------------------
+       MENÚ MÓVIL
+       ----------------------------------------------- */
+
+    .nav-menu {
+
+        display: none;
+
+        position: absolute;
+
+        top: 100%;
+
+        left: 0;
+
+        width: 100%;
+
+        background-color:
+            rgba(26, 26, 26, 0.95);
+
+        backdrop-filter:
+            blur(12px);
+
+        -webkit-backdrop-filter:
+            blur(12px);
+
+        padding:
+            var(--espacio-md);
+
+        box-shadow:
+            0 8px 32px
+            var(--negro-40);
+
+        max-height:
+            calc(100vh - 80px);
+
+        overflow-y: auto;
+    }
+
+
+    .nav-menu.activo {
+
+        display: block;
+    }
+
+
+    .nav-menu > ul {
+
+        flex-direction: column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            var(--espacio-sm);
+
+        width: 100%;
+    }
+
+
+    .nav-menu ul li a,
+    .nav-menu ul li {
+
+        display: block;
+
+        width: 100%;
+
+        padding:
+            8px 0;
+
+        border-radius: 6px;
+
+        transition:
+            background-color var(--transicion-rapida),
+            padding-left var(--transicion-rapida);
+    }
+
+
+    .nav-menu ul li a:hover,
+    .nav-menu ul li:hover {
+
+        background-color:
+            var(--color-rojo-mordix);
+
+        color:
+            var(--color-blanco);
+
+        padding-left: 8px;
+    }
+
+
+    .menu-desplegable .submenu {
+
+        position: static;
+
+        box-shadow: none;
+
+        background-color:
+            transparent;
+
+        padding-left:
+            var(--espacio-sm);
+
+        margin-top:
+            var(--espacio-xs);
+    }
+
+
+    /* -----------------------------------------------
+       WHATSAPP EN MÓVIL
+       ----------------------------------------------- */
+
+    header #svg-whatsapp {
+
+        background-color:
+            transparent;
+    }
+
+
+    header #svg-whatsapp a {
+
+        color:
+            var(--color-negro);
+
+        padding: 0;
+    }
+
+
+    /* -----------------------------------------------
+       MAIN
+       ----------------------------------------------- */
+
+    main {
+
+        margin-top: 7rem;
+    }
+
+
+    /* -----------------------------------------------
+       INICIO
+       ----------------------------------------------- */
+
+    .inicio {
+
+        flex-direction: column;
+
+        padding:
+            25px 15px;
+
+        margin:
+            15px auto;
+
+        max-width: 95%;
+
+        text-align: center;
+
+        gap:
+            var(--espacio-lg);
+    }
+
+
+    .inicio-texto {
+
+        text-align: center;
+    }
+
+
+    .inicio h1 {
+
+        font-size:
+            var(--font-h1-mobile);
+    }
+
+
+    .inicio p {
+
+        font-size:
+            var(--font-p-mobile);
+    }
+
+
+    .inicio-imagen img {
+
+        width: 240px;
+
+        margin-top: 10px;
+    }
+
+
+    /* -----------------------------------------------
+       SECCIONES
+       ----------------------------------------------- */
+
+    .secciones {
+
+        padding:
+            var(--espacio-md) 3%;
+
+        margin:
+            0 2%;
+    }
+
+
+    /* -----------------------------------------------
+       CONTACTO
+       ----------------------------------------------- */
+
+    .contacto-telefonos {
+
+        text-align: center;
+    }
+
+
+    /* -----------------------------------------------
+       MANZANAS CON FLEXBOX
+       ----------------------------------------------- */
+    .caja-manzanas {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--espacio-sm);
+    }
+
+    .cajas-manzanas-descricpiones {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .cajas-manzanas-descricpiones p {
+        font-size: 1.05rem;
+    }
+
+
+    /* -----------------------------------------------
+       CARRUSEL
+       ----------------------------------------------- */
+
+    .carrusel-contenedor {
+
+        height: 450px;
+    }
+
+
+    .carrusel h2 {
+
+        font-size:
+            var(--font-h2-tablet);
+    }
+
+
+    /* -----------------------------------------------
+       JUEGOS
+       ----------------------------------------------- */
+
+    .juegos h2 {
+
+        font-size: 2.2rem;
+    }
+
+
+    /* -----------------------------------------------
+       EVENTO
+       ----------------------------------------------- */
+
+    .seccion-evento {
+
+        width: 94%;
+    }
+
+
+    .neon-titulo {
+
+        font-size: 2rem;
+    }
+
+
+    .instrucciones-evento {
+
+        font-size: 1rem;
+    }
+
+
+    /* -----------------------------------------------
+       FOOTER
+       ----------------------------------------------- */
+
+    footer {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap:
+            var(--espacio-lg);
+
+        padding:
+            var(--espacio-lg);
+
+        line-height: 1;
+    }
+}
+
+
+/* =========================================================
+   MÓVIL
+   HASTA 600px
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    /* -----------------------------------------------
+       TEXTO
+       ----------------------------------------------- */
+
+    body {
+
+        font-size: 0.95rem;
+    }
+
+
+    p {
+
+        font-size:
+            var(--font-p-mobile);
+
+        line-height: 1.6;
+    }
+
+
+    li {
+
+        font-size: 1.1rem;
+    }
+
+
+    /* -----------------------------------------------
+       INICIO
+       ----------------------------------------------- */
+
+    .inicio h1 {
+
+        font-size: 1.8rem;
+    }
+
+
+    .inicio p {
+
+        font-size: 1rem;
+    }
+
+
+    /* -----------------------------------------------
+       MANZANAS
+       UNA COLUMNA
+       ----------------------------------------------- */
+    .descripcion-manzanas {
+        width: 100%;
+        padding: 0;
+    }
+
+    .caja-manzanas {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--espacio-sm);
+        width: 100%;
+    }
+
+    .cajas-manzanas-descricpiones {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        padding: var(--espacio-sm);
+    }
+
+    .cajas-manzanas-descricpiones img {
+        width: 11rem;
+        height: 11rem;
+        max-width: 100%;
+    }
+
+    .cajas-manzanas-descricpiones p {
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.6;
+        overflow-wrap: anywhere;
+    }
+
+
+    /* -----------------------------------------------
+       CARRUSEL
+       ----------------------------------------------- */
+
+    .carrusel h2 {
+
+        font-size:
+            var(--font-h2-mobile);
+    }
+
+
+    .carrusel-contenedor {
+
+        height: 400px;
+    }
+
+
+    /* -----------------------------------------------
+       JUEGOS
+       ----------------------------------------------- */
+
+    .juegos {
+
+        padding:
+            var(--espacio-lg)
+            var(--espacio-xs);
+    }
+
+
+    .juegos h2 {
+
+        font-size: 2rem;
+    }
+
+
+    .juegos-subtitulo {
+
+        font-size: 1rem;
+    }
+
+
+    .juego-card {
+
+        height: 200px;
+    }
+
+
+    .juego-contenido h3 {
+
+        font-size: 1.5rem;
+    }
+
+
+    /* -----------------------------------------------
+       EVENTO
+       ----------------------------------------------- */
+
+    .seccion-evento {
+
+        padding:
+            var(--espacio-lg)
+            var(--espacio-sm);
+
+        width: 94%;
+    }
+
+
+    .neon-titulo {
+
+        font-size: 1.6rem;
+
+        letter-spacing: 2px;
+    }
+
+
+    .instrucciones-evento {
+
+        font-size: 0.95rem;
+    }
+
+
+    .pista-resaltada {
+
+        font-size: 1rem;
+    }
+
+
+    /* -----------------------------------------------
+       FOOTER
+       ----------------------------------------------- */
+
+    footer {
+
+        padding:
+            var(--espacio-lg)
+            var(--espacio-sm);
+    }
+
+
+    #logo_pie {
+
+        width: 8rem;
+    }
+
+
+    .sociales-footer {
+
+        width: 50px;
+
+        height: 50px;
+    }
+}
