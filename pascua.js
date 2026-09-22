@@ -15,8 +15,8 @@ const contenedor = document.getElementById('trigger-secreto');
             contadorClics = 0;
         }, 1000); // 1 segundo de límite
 
-        // Al llegar a los 5 clics seguidos
-        if (contadorClics === 5) {
+        // Al llegar a los 7 clics seguidos
+        if (contadorClics === 7) {
             contadorClics = 0;
             clearTimeout(tiempoReseteo);
 
