@@ -2219,7 +2219,7 @@ footer {
     .nav-menu ul li {
 
         display: block;
-
+        color: rgb(0,0,0)
         width: 100%;
 
         padding:
