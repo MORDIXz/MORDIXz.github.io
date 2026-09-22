@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '../../IMG/ICONOS/MORDIX.svg';
 
 
-    const TIEMPO_INICIAL = 40;
+    const TIEMPO_INICIAL = 25;
 
 
     let tiempoRestante =
@@ -196,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     >
                         Si logras ganar en menos de
                         10 segundos obtendrás un
-                        descuento de 90%.
+                        descuento del 90%.
                     </li>
 
 
@@ -209,22 +209,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         "
                     >
                         Si logras terminar el juego en
-                        menos de 20 segundos obtendrás
-                        un descuento de 30%.
-                    </li>
-
-
-                    <li
-                        style="
-                            font-size: 1rem;
-                            font-weight: normal;
-                            color: #444;
-                            cursor: default;
-                        "
-                    >
-                        Si logras terminar el juego en
-                        menos de 30 segundos tendrás
-                        un descuento de 10%.
+                        menos de 20 segundos tendrás
+                        un descuento de 20%.
                     </li>
 
 
@@ -238,7 +224,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     >
                         Si logras terminar el juego antes
                         que termine el tiempo obtendrás
-                        un descuento de 5%.
+                        un descuento del 5%.
                     </li>
 
                 </ul>
@@ -1061,17 +1047,10 @@ document.addEventListener('DOMContentLoaded', () => {
             tiempoTranscurrido < 20
         ) {
 
-            porcentaje = '30%';
+            porcentaje = '20%';
 
         }
 
-        else if (
-            tiempoTranscurrido < 30
-        ) {
-
-            porcentaje = '10%';
-
-        }
 
         else {
 
