@@ -2176,10 +2176,10 @@ footer {
             rgba(255, 255, 255, 0.95);
 
         backdrop-filter:
-            blur(12px);
+            blur(4px);
 
         -webkit-backdrop-filter:
-            blur(4px);
+            blur(12px);
 
         padding:
             var(--espacio-md);
@@ -2193,7 +2193,6 @@ footer {
 
         overflow-y: auto;
     }
-
 
     .nav-menu.activo {
 
