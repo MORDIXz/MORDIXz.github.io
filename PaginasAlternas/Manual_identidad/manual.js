@@ -2,7 +2,7 @@
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-    const urlPdf = 'Manual_Identidad.pdf'; // Asegúrate de que la ruta sea correcta
+    const urlPdf = 'MANUAL_IDENTIDAD_MORDIX.pdf'; // Asegúrate de que la ruta sea correcta
     const contenedorPdf = document.getElementById('pdf-viewer');
 
     pdfjsLib.getDocument(urlPdf).promise.then(async (pdfDoc) => {
