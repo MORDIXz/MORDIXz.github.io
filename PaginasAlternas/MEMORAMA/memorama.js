@@ -349,7 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
             >
 
                 <h1 class="titulo-booyha">
-                    BOOYHA
+                    ¡¡GANASTE!!
                 </h1>
 
 
