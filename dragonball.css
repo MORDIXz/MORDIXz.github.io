@@ -2658,15 +2658,20 @@ footer {
 }
 
 
-.contenido_main.secciones.seccion-videos {
+.seccion-videos{
+    width: 100%; 
+    margin: 0 auto;
+}
+.seccion-videos > video{
     width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+    max-height: 550px;
+    height:100%;
+    border-radius: 8px;;
 }
 
-.contenido_main.secciones.seccion-videos video {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-    display: block;
+@media (max-width: 1000px){
+    
+    .seccion-videos > video {
+        max-height: 460px;
+    }
 }
