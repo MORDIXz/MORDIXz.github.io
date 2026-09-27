@@ -2658,20 +2658,30 @@ footer {
 }
 
 
-.seccion-videos{
+.seccion-videos {
     width: 100%; 
+    max-width: 900px; /* Límite máximo para que no crezca infinito en pantallas gigantes */
     margin: 0 auto;
 }
-.seccion-videos > video{
+
+.seccion-videos > video {
     width: 100%;
-    max-height: 550px;
-    height:100%;
-    border-radius: 8px;;
+    height: auto; /* Mantiene la proporción perfecta del video automáticamente */
+    max-height: 550px; /* Altura máxima en PC */
+    display: block;
+    border-radius: 8px;
 }
 
-@media (max-width: 1000px){
+/* Media query para tablets y celulares (menores a 1000px) */
+@media (max-width: 1000px) {
+    .seccion-videos {
+        max-width: 100%; /* Ocupa todo el ancho disponible */
+        padding: 0 15px; /* Margen a los lados para que no pegue a la pantalla del cel */
+        box-sizing: border-box;
+    }
+    
     .seccion-videos > video {
-        max-height: 460px;
+        max-height: 350px; /* Reducimos la altura máxima para que en celulares no tape toda la pantalla */
     }
 }
 
