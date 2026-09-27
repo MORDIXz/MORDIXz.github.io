@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================
 
     const sonidoVictoria =
-        new Audio('../../AUDIO/booyhas.mp3');
+        new Audio('../../AUDIO/booyha.mp3');
 
     const sonidoAlerta =
         new Audio('../../AUDIO/ContadorFInal.mp3');
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sonidoJuego.loop = true;
 
     const sonidoGameOver =
-        new Audio('../../AUDIO/Game-overs.mp3');
+        new Audio('../../AUDIO/Game-over.mp3');
 
 
     let alertaReproducida = false;
